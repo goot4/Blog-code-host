@@ -1,0 +1,27 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="DataPresentSettingMenu" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); height: 112px; flex-direction: row; justify-content: flex-start;">
+        <ui:VisualElement name="DisplayIndicator" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); width: 200px;">
+            <ui:Toggle label="ID" name="ID" value="true" />
+            <ui:Toggle label="KIND" name="KIND" value="true" />
+            <ui:Toggle label="TITLE" name="TITLE" value="true" />
+            <ui:Toggle label="TIME" name="TIME" value="true" />
+            <ui:Toggle label="READ" name="READ" value="true" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Filter" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+            <uie:EnumFlagsField label="KIND" type="DataEntry+Kind, Assembly-CSharp" name="KIND" value="-1" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:MultiColumnListView fixed-item-height="20" style="height: 490px;">
+        <ui:Columns>
+            <ui:Column name="ID" title="ID" width="40" />
+            <ui:Column name="KIND" title="KIND" width="80" />
+            <ui:Column name="TITLE" title="TITLE" width="80" />
+            <ui:Column name="TIME" title="TIME" width="160" />
+            <ui:Column name="READ" title="READ" width="50" />
+        </ui:Columns>
+    </ui:MultiColumnListView>
+    <ui:VisualElement name="Commands" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; justify-content: flex-end;">
+        <ui:Button text="Read" display-tooltip-when-elided="true" name="READ" />
+        <ui:Button text="Copy" display-tooltip-when-elided="true" name="COPY" />
+    </ui:VisualElement>
+</ui:UXML>
